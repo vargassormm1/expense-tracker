@@ -42,10 +42,6 @@ h2 {
   text-align: center;
 }
 
-.toggle {
-  display: none;
-}
-
 form {
   display: flex;
   flex-direction: column;

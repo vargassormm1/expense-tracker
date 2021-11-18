@@ -1,8 +1,10 @@
 const Expense = (props) => {
   return (
     <div className="expense">
-      <h3>{props.expense.title}</h3>
-      <p>${props.expense.amount}</p>
+      <div className="product">
+        <h3>{props.expense.title}</h3>
+        <p>${props.expense.amount}</p>
+      </div>
       <button
         className="btn"
         style={{ backgroundColor: "red" }}

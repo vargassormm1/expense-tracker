@@ -45,7 +45,11 @@ function App() {
 
   return (
     <div className="container">
-      <Header expenses={expenses} onAdd={(e) => setShowForm(!showForm)} />
+      <Header
+        expenses={expenses}
+        onAdd={(e) => setShowForm(!showForm)}
+        Close={showForm}
+      />
       {showForm && <ExpenseForm onAdd={addExpense} />}
       {expenses.length > 0 ? (
         <List expenses={expenses} onDelete={deleteExpense} />

@@ -7,7 +7,7 @@ const Header = (props) => {
         style={{ backgroundColor: "black" }}
         onClick={props.onAdd}
       >
-        Add
+        {props.Close ? "Close" : "Add"}
       </button>
     </div>
   );
