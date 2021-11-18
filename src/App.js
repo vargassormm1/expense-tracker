@@ -1,8 +1,9 @@
+import { useState } from "react";
 import Header from "./Components/Header";
 import List from "./Components/List";
 
 function App() {
-  const expenses = [
+  const [expenses, setExpenses] = useState([
     {
       id: "e1",
       title: "Toilet Paper",
@@ -22,12 +23,20 @@ function App() {
       amount: 450,
       date: new Date(2021, 5, 12),
     },
-  ];
+  ]);
+
+  const deleteExpense = (id) => {
+    setExpenses(expenses.filter((expense) => expense.id !== id));
+  };
 
   return (
     <div className="container">
       <Header expenses={expenses} />
-      <List expenses={expenses} />
+      {expenses.length > 0 ? (
+        <List expenses={expenses} onDelete={deleteExpense} />
+      ) : (
+        <h2>No Expenses</h2>
+      )}
     </div>
   );
 }

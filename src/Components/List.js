@@ -1,10 +1,18 @@
+import Expense from "./Expense";
+
 const List = (props) => {
   return (
-    <ul>
+    <div>
       {props.expenses.map((expense) => {
-        return <li>{expense.title}</li>;
+        return (
+          <Expense
+            key={expense.id}
+            expense={expense}
+            onDelete={props.onDelete}
+          />
+        );
       })}
-    </ul>
+    </div>
   );
 };
 
