@@ -26,6 +26,9 @@ function App() {
     },
   ]);
 
+  // Toggle form
+  const [showForm, setShowForm] = useState(false);
+
   // Add Expense
   const addExpense = (expense) => {
     const id = Math.floor(Math.random() * 10000) + 1;
@@ -42,8 +45,8 @@ function App() {
 
   return (
     <div className="container">
-      <Header expenses={expenses} />
-      <ExpenseForm onAdd={addExpense} />
+      <Header expenses={expenses} onAdd={(e) => setShowForm(!showForm)} />
+      {showForm && <ExpenseForm onAdd={addExpense} />}
       {expenses.length > 0 ? (
         <List expenses={expenses} onDelete={deleteExpense} />
       ) : (

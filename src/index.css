@@ -8,7 +8,7 @@
   padding: 2rem;
   background-color: darkgray;
   margin: 5rem auto;
-  width: 65%;
+  width: 50%;
   border-radius: 5px;
 }
 
@@ -44,4 +44,28 @@ h2 {
 
 .toggle {
   display: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 1px black solid;
+  border-radius: 5px;
+  padding: 1rem;
+}
+.controlForm {
+  margin: 1rem;
+  width: 100%;
+  padding: 0 3rem 0 3rem;
+}
+input {
+  width: 100%;
+  display: block;
+  padding: 10px;
+}
+.submit {
+  width: 100%;
 }
