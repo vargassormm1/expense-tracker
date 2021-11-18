@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "./Components/Header";
 import List from "./Components/List";
+import ExpenseForm from "./Components/ExpenseForm";
 
 function App() {
   const [expenses, setExpenses] = useState([
@@ -25,6 +26,16 @@ function App() {
     },
   ]);
 
+  // Add Expense
+  const addExpense = (expense) => {
+    const id = Math.floor(Math.random() * 10000) + 1;
+
+    const newExpense = { id, ...expense };
+
+    setExpenses([...expenses, newExpense]);
+  };
+
+  // Delete Expense
   const deleteExpense = (id) => {
     setExpenses(expenses.filter((expense) => expense.id !== id));
   };
@@ -32,6 +43,7 @@ function App() {
   return (
     <div className="container">
       <Header expenses={expenses} />
+      <ExpenseForm onAdd={addExpense} />
       {expenses.length > 0 ? (
         <List expenses={expenses} onDelete={deleteExpense} />
       ) : (
